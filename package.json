@@ -4,6 +4,9 @@
   "main": "index.js",
   "repository": "https://github.com/lucascprazeres/sof_guru",
   "author": "Lucas Prazeres <olucascostadp@gmail.com>",
+  "scripts": {
+    "start": "node src/index.js"
+  },
   "license": "MIT",
   "dependencies": {
     "puppeteer": "^5.5.0"
