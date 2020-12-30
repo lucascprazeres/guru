@@ -5,27 +5,19 @@
 <h1 align="center">Guru</h1>
 <h4 align="center" id="sobre">Uma aplicação de linha de comando que automatiza buscas no stackoverflow :mag:</h4>
 
----
+<div align="center">
 
 ![](https://img.shields.io/badge/license-MIT-green)
 ![](https://img.shields.io/badge/languege-Portuguese-yellow)
 [![GitHub Repo stars](https://img.shields.io/github/stars/lucascprazeres/sof_guru?style=social)](https://github.com/lucascprazeres/sof_guru/stargazers)
 
-
----
+</div>
 
 <h2 align="center">  <img alt="Vídeo do Projeto" title="#Projeto" src="https://github.com/Daniel-Vinicius/sof_guru/blob/versao_windows/.github/video.gif" />  </h2>
 
 ### Features 
-- [x] Personalizar busca
-- [x] Mostrar Rapidamente no console grande parte das soluções
-
----
-
-<!-- Coloque o status do projeto -->
-<h2 align="center">  
-Projeto finalizado ✔
-</h2>
+- [x] Buscar pelo termo passado como argumento de linha de comando
+- [x] Mostrar Rapidamente no console a solução mais votada
 
  
  <!-- Altere os Pré-requisitos -->
@@ -90,9 +82,5 @@ Ao acessar esse repositório via github, a opção de criar um **pull request** 
 Esse projeto se encontra sob a licença **MIT**. Para mais informações, acesse o arquivo **LICENSE**.
 
 ---
-<a href="https://github.com/lucascprazeres" style="text-decoration: none;">
-<img style="border-radius: 50%;" src="https://avatars2.githubusercontent.com/u/51201126?s=460&u=bcec5273cd6c770aaddfc940009deb3feb7ee6a0&v=4" width="100px;"  alt="Lucas Prazeres"/>
 
-<br />
-<span> Feito com ❤️ por Lucas Prazeres 👋 Entre em contato! </span> 
-</a> 
+<div align="center"> Feito com ❤️ por <a href="">Lucas Prazeres</a> 👋 Entre em contato! </div>  
