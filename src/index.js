@@ -15,10 +15,42 @@ const question = arguments[2] + ' stack overflow';
     page.waitForNavigation(),
   ]);
 
-  await Promise.all([
-    page.click('h2 + .rc h3'),
-    page.waitForNavigation()
-  ])
+  // const firstSuggestion = await page.evaluate(el => el.href,
+  //   (await page.$('.rc a'))
+  // );
+
+  // if (firstSuggestion && firstSuggestion.includes('stackoverflow.com')) {
+  //   await Promise.all([
+  //     page.click('h3'),
+  //     page.waitForNavigation()
+  //   ])
+  // } else {
+  //   await Promise.all([
+  //     page.click('h2 + .rc h3'),
+  //     page.waitForNavigation()
+  //   ])
+  // }
+
+  const allLinks = await page.evaluate(() => {
+    const anchorList = [];
+
+    for (a of document.querySelectorAll('.rc a')) {
+      anchorList.push(a.href);
+    }
+
+    return anchorList;
+  });
+
+  let correctLink;
+
+  for (link of allLinks) {
+    if (link.includes('stackoverflow.com') && !link.includes('/tagged')) {
+      correctLink = link;
+      break;
+    }
+  }
+
+  await page.goto(correctLink);
 
   await page.waitForSelector('a.question-hyperlink');
 
