@@ -13,7 +13,7 @@
 
 </div>
 
-<h2 align="center">  <img alt="Vídeo do Projeto" title="#Projeto" src="https://github.com/Daniel-Vinicius/sof_guru/blob/versao_windows/.github/video.gif" />  </h2>
+<h2 align="center">  <img width="700" alt="Vídeo do Projeto" title="#Projeto" src=".github/video.gif" />  </h2>
 
 ### Features 
 - [x] Buscar pelo termo passado como argumento de linha de comando
@@ -83,4 +83,4 @@ Esse projeto se encontra sob a licença **MIT**. Para mais informações, acesse
 
 ---
 
-<div align="center"> Feito com ❤️ por <a href="">Lucas Prazeres</a> 👋 Entre em contato! </div>  
+<div align="center"> Feito com ❤️ por <a href="https://www.linkedin.com/in/lucas-prazeres/">Lucas Prazeres</a> 👋 Entre em contato! </div>  
