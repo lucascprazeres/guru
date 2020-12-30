@@ -1,4 +1,8 @@
-# sof_guru
+<div align="center">
+  <img src=".github/guru.svg" width=120px>
+</div>
+
+# guru
 Um script nodejs que automatiza buscas no stackoverflow
 
 # Como utilizar?
@@ -47,3 +51,10 @@ PATH="$PATH:$HOME/bin"
 Isso vai fazer com o que o seu shell saiba onde procurar pelo comando guru, quando inserido
 
 salve o arquivo, feche o terminal e, agora, o novo comando estará disponível em qualquer lugar, via terminal!
+
+## Licença
+Esse projeto se encontra sob a licença **MIT**. Para mais informações, acesse o arquivo **LICENSE**.
+
+***
+
+Feito com :sweat_drops: e com :purple_heart: por [Lucas dos Prazeres](https://www.linkedin.com/in/lucas-prazeres-781772182/)
