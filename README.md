@@ -90,9 +90,9 @@ Ao acessar esse repositório via github, a opção de criar um **pull request** 
 Esse projeto se encontra sob a licença **MIT**. Para mais informações, acesse o arquivo **LICENSE**.
 
 ---
-<div align="center"><a href="https://github.com/lucascprazeres" style="text-decoration: none;">
+<a href="https://github.com/lucascprazeres" style="text-decoration: none;">
 <img style="border-radius: 50%;" src="https://avatars2.githubusercontent.com/u/51201126?s=460&u=bcec5273cd6c770aaddfc940009deb3feb7ee6a0&v=4" width="100px;"  alt="Lucas Prazeres"/>
 
 <br />
 <span> Feito com ❤️ por Lucas Prazeres 👋 Entre em contato! </span> 
-</a> </div>
+</a> 
