@@ -1,19 +1,20 @@
-<h1 align="center"> Guru </h1>
-
 <div align="center">
   <img src=".github/guru.svg" width=120px>
 </div>
 
- <h4 id="sobre" align="center">
-🎉 Uma aplicação de linha de comando que automatiza buscas no stackoverflow :mag:
+<h1 align="center">Guru</h1>
+<h4 align="center">Uma aplicação de linha de comando que automatiza buscas no stackoverflow :mag:</h4>
+
+---
 
 ![](https://img.shields.io/badge/license-MIT-green)
 ![](https://img.shields.io/badge/languege-Portuguese-yellow)
-
 [![GitHub Repo stars](https://img.shields.io/github/stars/lucascprazeres/sof_guru?style=social)](https://github.com/lucascprazeres/sof_guru/stargazers)
 
 
-<h2 align="center">  <img alt="Vídeo do Projeto" title="#Projeto" src="https://github.com/lucascprazeres/sof_guru/blob/main/.github/video.gif" />  </h2>
+---
+
+<h2 align="center">  <img alt="Vídeo do Projeto" title="#Projeto" src="https://github.com/Daniel-Vinicius/sof_guru/blob/versao_windows/.github/video.gif" />  </h2>
 
 ### Features 
 - [x] Personalizar busca
