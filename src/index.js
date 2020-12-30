@@ -4,7 +4,7 @@ const arguments = process.argv;
 const question = arguments[2] + ' stack overflow';
 
 (async () => {
-  const browser = await puppeteer.launch({ headless: false });
+  const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
 
   await page.goto('https://google.com/');
