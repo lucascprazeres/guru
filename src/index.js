@@ -15,22 +15,6 @@ const question = arguments[2] + ' stack overflow';
     page.waitForNavigation(),
   ]);
 
-  // const firstSuggestion = await page.evaluate(el => el.href,
-  //   (await page.$('.rc a'))
-  // );
-
-  // if (firstSuggestion && firstSuggestion.includes('stackoverflow.com')) {
-  //   await Promise.all([
-  //     page.click('h3'),
-  //     page.waitForNavigation()
-  //   ])
-  // } else {
-  //   await Promise.all([
-  //     page.click('h2 + .rc h3'),
-  //     page.waitForNavigation()
-  //   ])
-  // }
-
   const allLinks = await page.evaluate(() => {
     const anchorList = [];
 
