@@ -1,53 +1,36 @@
 const puppeteer = require("puppeteer");
+const options = require("./options");
 
+// arg1-> filename, arg2-> searchterm, [arg3]-> --limit + (number of results)
 const arguments = process.argv;
 const question = arguments[2] + ' stack overflow';
+const optionsAndValues = {};
 
-(async () => {
-  const browser = await puppeteer.launch({ headless: true });
-  const page = await browser.newPage();
-
-  await page.goto('https://google.com/');
-  await page.type('input[type="text"]', question);
-  
-  await Promise.all([
-    page.keyboard.press('Enter'),
-    page.waitForNavigation(),
-  ]);
-
-  const allLinks = await page.evaluate(() => {
-    const anchorList = [];
-
-    for (a of document.querySelectorAll('.rc a')) {
-      anchorList.push(a.href);
-    }
-
-    return anchorList;
-  });
-
-  let correctLink;
-
-  for (link of allLinks) {
-    if (link.includes('stackoverflow.com') && !link.includes('/tagged')) {
-      correctLink = link;
-      break;
-    }
+if (arguments.length > 3) {
+  let key, value;
+  for (let i = 3; i < arguments.length; i++) {
+    [key, value] = arguments[i].split('=');
+    optionsAndValues[key] = value;
   }
+} else {
+  optionsAndValues['--limit'] = 1;
+}
 
-  await page.goto(correctLink);
+const scrappPageAndReturnAnswerParagraphs = async (pageInstance, link) => {
+  await pageInstance.goto(link);
 
-  await page.waitForSelector('a.question-hyperlink');
+  await pageInstance.waitForSelector('a.question-hyperlink');
 
-  const questionTitle = await page.evaluate(el => el.innerText,
-    await page.$('a.question-hyperlink')
+  const questionTitle = await pageInstance.evaluate(el => el.innerText,
+    await pageInstance.$('a.question-hyperlink')
   )
 
   console.log(`\ngetting answer to: ${questionTitle}...\n`);
 
-  await page.waitForSelector('.answer');
-  const answerParagraphs = await page.evaluate(() => {
+  await pageInstance.waitForSelector('.answer');
+  const answerParagraphs = await pageInstance.evaluate(() => {
     const answerElements = document.querySelectorAll('.answer .js-post-body p');
-    
+
     const paragraphList = [];
 
     for (p of answerElements) {
@@ -57,7 +40,52 @@ const question = arguments[2] + ' stack overflow';
     return paragraphList;
   });
 
-  answerParagraphs.forEach(p => console.log(p+'\n'));
+  return answerParagraphs;
+}
+
+(async () => {
+  const browser = await puppeteer.launch({ headless: true });
+  const mainPage = await browser.newPage();
+
+  await mainPage.goto('https://google.com/');
+  await mainPage.type('input[type="text"]', question);
+
+  await Promise.all([
+    mainPage.keyboard.press('Enter'),
+    mainPage.waitForNavigation(),
+  ]);
+
+  const allLinks = await mainPage.evaluate(() => {
+    const anchorList = [];
+
+    for (a of document.querySelectorAll('.rc a')) {
+      anchorList.push(a.href);
+    }
+
+    return anchorList;
+  });
+
+  let linksAfterOptions = [...allLinks];
+
+  for (opt of Object.keys(optionsAndValues)) {
+    linksAfterOptions = options[opt](linksAfterOptions, optionsAndValues[opt]);
+  }
+
+  const pageArray = [];
+  for (link of linksAfterOptions) {
+    pageArray.push(await browser.newPage());
+  }
+
+  const result = await Promise.all([
+    ...linksAfterOptions.map((link, index) => {
+      return scrappPageAndReturnAnswerParagraphs(pageArray[index], link);
+    })
+  ]);
+
+  result.forEach(answer => {
+    answer.forEach(p => console.log(`${p}\n`));
+    console.log('='.repeat(50));
+  })
 
   await browser.close();
 })();
