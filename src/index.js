@@ -3,8 +3,8 @@ const puppeteer = require("puppeteer");
 const arguments = process.argv;
 const question = arguments[2] + ' stack overflow';
 
-async function main() {
-  const browser = await puppeteer.launch({ headless: true });
+(async () => {
+  const browser = await puppeteer.launch({ headless: false });
   const page = await browser.newPage();
 
   await page.goto('https://google.com/');
@@ -16,15 +16,32 @@ async function main() {
   ]);
 
   await Promise.all([
-    page.click('h3'),
+    page.click('h2 + .rc h3'),
     page.waitForNavigation()
   ])
 
-  const titleHandle = await page.$('.question-hyperlink');
-  console.log(titleHandle);
+  await page.waitForSelector('a.question-hyperlink');
 
-  // await browser.close();
+  const questionTitle = await page.evaluate(el => el.innerText,
+    await page.$('a.question-hyperlink')
+  )
 
-}
+  console.log(`\ngetting answer to: ${questionTitle}...\n`);
 
-main();
+  await page.waitForSelector('.answer');
+  const answerParagraphs = await page.evaluate(() => {
+    const answerElements = document.querySelectorAll('.answer .js-post-body p');
+    
+    const paragraphList = [];
+
+    for (p of answerElements) {
+      paragraphList.push(p.innerText);
+    }
+
+    return paragraphList;
+  });
+
+  answerParagraphs.forEach(p => console.log(p+'\n'));
+
+  await browser.close();
+})();
