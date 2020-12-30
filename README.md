@@ -3,54 +3,69 @@
 </div>
 
 <h1 align="center">Guru</h1>
-<h4 align="center">Uma aplicação de linha de comando que automatiza buscas no stackoverflow :mag:</h4>
+<h4 align="center" id="sobre">Uma aplicação de linha de comando que automatiza buscas no stackoverflow :mag:</h4>
 
-## Como utilizar?
-Se você tiver uma pasta especial para seus projetos, entre nela via terminal e clone o repositório
+---
 
-```
-$ cd sua/pasta/especial
-$ git clone https://github.com/lucascprazeres/sof_guru
-$ cd sof_guru
-```
+![](https://img.shields.io/badge/license-MIT-green)
+![](https://img.shields.io/badge/languege-Portuguese-yellow)
+[![GitHub Repo stars](https://img.shields.io/github/stars/lucascprazeres/sof_guru?style=social)](https://github.com/lucascprazeres/sof_guru/stargazers)
 
-O programa deve ser rodado via terminal e passando a string de pesquisa como argumento. Por isso, abra-o e digite o comando
 
-```bash
-$ node src/index.js "Sua pesquisa"
-```
-**Extra**: Caso você seja um usuário linux, recomendo a criação do diretório **bin**, em sua home, e copiar o arquivo **guru** para lá.
+---
 
-```bash
-$ mkdir ~/bin
-$ cp guru ~/bin
-```
+<h2 align="center">  <img alt="Vídeo do Projeto" title="#Projeto" src="https://github.com/Daniel-Vinicius/sof_guru/blob/versao_windows/.github/video.gif" />  </h2>
 
-*Esse é o arquivo que será executado quando o comando guru for inserido*
+### Features 
+- [x] Personalizar busca
+- [x] Mostrar Rapidamente no console grande parte das soluções
 
-Abra o arquivo guru e insira o caminho para a sua pasta do projeto, no local indicado.
+---
 
-*ps: caso você não tenha certeza do caminho, basta digitar o comando **pwd** dentro da pasta do projeto*
+<!-- Coloque o status do projeto -->
+<h2 align="center">  
+Projeto finalizado ✔
+</h2>
 
-Em seguida, informe ao shell que o arquivo transferido trata-se de um executável
+ 
+ <!-- Altere os Pré-requisitos -->
 
-```bash
-$ chmod +x ~/bin/guru
-```
+### 🛒 Pré-requisitos<a id="pre-requisitos"></a>
 
-A última etapa do processo é abrir o arquivo .bashrc, localizado na sua home, e inserir a seguinte linha, ao final do arquivo
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
+* [Git](https://git-scm.com/)
+* [Node.js](https://nodejs.org/pt-br/)
+ 
+ Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
+ 
+   ### 📀Executando a Aplicação<a id="rodando"></a>
+   
+````bash 
+ # Clone este repositório
+ git clone https://github.com/lucascprazeres/sof_guru
+ 
+ # Acesse a pasta do projeto no terminal
+ cd sof_guru
+ 
+ # Instale as dependências
+ $ yarn install ou
+ $ npm i 
+ 
+ # Execute a aplicação
+ $ node src/index.js ou
+ $ yarn/npm start
+ 
+ # Executando a aplicação ela irá abrir uma janela no browser padrão, entrará no Google e você pode buscar pelo que quiser 😎
+ ````
 
-```bash
-$ sudo nano ~/.bashrc # ou ~/.zshrc. caso você seja usuário do zshell
-```
+ <!-- Altere as Tecnologias -->
+### 🛠 Tecnologias<a id="tecnologias"></a>
+ As seguintes ferramentas foram usadas na construção do projeto:
+ 
+  - [Puppeteer](https://pptr.dev/)
+  - [Javascript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
 
-```bash
-PATH="$PATH:$HOME/bin"
-```
-
-Isso vai fazer com o que o seu shell saiba onde procurar pelo comando guru, quando inserido.
-
-Salve o arquivo, feche o terminal e, agora, o novo comando estará disponível em qualquer lugar!
+### 👨‍💻Autor <a id="autor"> </a>
 
 ## Como contribuir?
 
@@ -74,6 +89,10 @@ Ao acessar esse repositório via github, a opção de criar um **pull request** 
 ## Licença
 Esse projeto se encontra sob a licença **MIT**. Para mais informações, acesse o arquivo **LICENSE**.
 
-***
+---
+<div align="center"><a href="https://github.com/lucascprazeres" style="text-decoration: none;">
+<img style="border-radius: 50%;" src="https://avatars2.githubusercontent.com/u/51201126?s=460&u=bcec5273cd6c770aaddfc940009deb3feb7ee6a0&v=4" width="100px;"  alt="Lucas Prazeres"/>
 
-Feito com :sweat_drops: e com :purple_heart: por [Lucas dos Prazeres](https://www.linkedin.com/in/lucas-prazeres-781772182/)
+<br />
+<span> Feito com ❤️ por Lucas Prazeres 👋 Entre em contato! </span> 
+</a> </div>
