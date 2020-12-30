@@ -2,10 +2,10 @@
   <img src=".github/guru.svg" width=120px>
 </div>
 
-# guru
-Um script nodejs que automatiza buscas no stackoverflow
+<h1 align="center">Guru</h1>
+<h4 align="center">Uma aplicação de linha de comando que automatiza buscas no stackoverflow :mag:</h4>
 
-# Como utilizar?
+## Como utilizar?
 Se você tiver uma pasta especial para seus projetos, entre nela via terminal e clone o repositório
 
 ```
@@ -48,9 +48,28 @@ $ sudo nano ~/.bashrc # ou ~/.zshrc. caso você seja usuário do zshell
 PATH="$PATH:$HOME/bin"
 ```
 
-Isso vai fazer com o que o seu shell saiba onde procurar pelo comando guru, quando inserido
+Isso vai fazer com o que o seu shell saiba onde procurar pelo comando guru, quando inserido.
 
-salve o arquivo, feche o terminal e, agora, o novo comando estará disponível em qualquer lugar, via terminal!
+Salve o arquivo, feche o terminal e, agora, o novo comando estará disponível em qualquer lugar!
+
+## Como contribuir?
+
+Com o projeto na sua máquina, basta criar uma branch para a sua feature/correção
+
+```bash
+$ git checkout -b sua_branch
+```
+
+Realize as mudanças, e, depois disso, salve-as e envie para este repositório, com
+
+
+```bash
+$ git add .
+$ git commit -m 'conte o que você fez'
+$ git push origin sua-branch
+```
+
+Ao acessar esse repositório via github, a opção de criar um **pull request** estará disponível.
 
 ## Licença
 Esse projeto se encontra sob a licença **MIT**. Para mais informações, acesse o arquivo **LICENSE**.
