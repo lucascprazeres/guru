@@ -1,0 +1,11 @@
+{
+  "name": "sof_guru",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/lucascprazeres/sof_guru",
+  "author": "Lucas Prazeres <olucascostadp@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "^5.5.0"
+  }
+}
