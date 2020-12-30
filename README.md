@@ -3,7 +3,7 @@
 </div>
 
 <h1 align="center">Guru</h1>
-<h4 align="center">Uma aplicação de linha de comando que automatiza buscas no stackoverflow :mag:</h4>
+<h4 align="center" id="sobre">Uma aplicação de linha de comando que automatiza buscas no stackoverflow :mag:</h4>
 
 ---
 
@@ -20,33 +20,25 @@
 - [x] Personalizar busca
 - [x] Mostrar Rapidamente no console grande parte das soluções
 
+---
 
 <!-- Coloque o status do projeto -->
-<h4 align="left">  
+<h2 align="center">  
 Projeto finalizado ✔
-</h4>
+</h2>
 
-Tabela de conteúdos 
-================= 
-<!--ts-->
- * [Sobre](#sobre) 
- 
- * [Executando a aplicação](#rodando)
- * [Tecnologias](#tecnologias)
- * [Autor](#autor)
- <!--te-->
  
  <!-- Altere os Pré-requisitos -->
 
 ### 🛒 Pré-requisitos<a id="pre-requisitos"></a>
 
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
-* [Git](https://git-scm.com/),
-* [Node.js](https://nodejs.org/pt-br/) e
+* [Git](https://git-scm.com/)
+* [Node.js](https://nodejs.org/pt-br/)
  
  Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
  
-   ### 📀Rodando a Aplicação<a id="rodando"></a>
+   ### 📀Executando a Aplicação<a id="rodando"></a>
    
 ````bash 
  # Clone este repositório
