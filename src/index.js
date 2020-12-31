@@ -55,17 +55,28 @@ const scrappPageAndReturnAnswerParagraphs = async (pageInstance, link) => {
     mainPage.waitForNavigation(),
   ]);
 
-  const allLinks = await mainPage.evaluate(() => {
-    const anchorList = [];
+  const allStackoverflowLinks = await mainPage.evaluate(() => {
+    const hyperlinks = [];
 
     for (a of document.querySelectorAll('.rc a')) {
-      anchorList.push(a.href);
+      if (a.href.includes('stackoverflow.com')) {
+        hyperlinks.push(a.href);
+      }
     }
 
-    return anchorList;
+    return hyperlinks;
   });
 
-  let linksAfterOptions = [...allLinks];
+  const linksWithoutWebCache = allStackoverflowLinks.filter(link => 
+    !link.includes('webcache'),
+  );
+  const linksWithoutTaggedPostPages = linksWithoutWebCache.filter(link => 
+    !link.includes('/tagged'),
+  );
+
+  console.log(linksWithoutTaggedPostPages);
+
+  let linksAfterOptions = [...linksWithoutTaggedPostPages];
 
   for (opt of Object.keys(optionsAndValues)) {
     linksAfterOptions = options[opt](linksAfterOptions, optionsAndValues[opt]);
@@ -82,10 +93,10 @@ const scrappPageAndReturnAnswerParagraphs = async (pageInstance, link) => {
     })
   ]);
 
-  result.forEach(answer => {
-    answer.forEach(p => console.log(`${p}\n`));
-    console.log('='.repeat(50));
-  })
+  // result.forEach(answer => {
+  //   answer.forEach(p => console.log(`${p}\n`));
+  //   console.log('='.repeat(50));
+  // });
 
   await browser.close();
 })();
