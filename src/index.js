@@ -4,16 +4,18 @@ const options = require("./options");
 // arg1-> filename, arg2-> searchterm, [arg3]-> --limit + (number of results)
 const arguments = process.argv;
 const question = arguments[2] + ' stack overflow';
-const optionsAndValues = {};
+const longOptions = [];
+const shortOptions = [];
 
 if (arguments.length > 3) {
-  let key, value;
-  for (let i = 3; i < arguments.length; i++) {
-    [key, value] = arguments[i].split('=');
-    optionsAndValues[key] = value;
+  for (arg of arguments.splice(3,)) {
+    if (arg.includes('--')) {
+      longOptions.push(arg);
+    }
+    else {
+      shortOptions.push(arg);
+    }
   }
-} else {
-  optionsAndValues['--limit'] = 1;
 }
 
 const scrappPageAndReturnAnswerParagraphs = async (pageInstance, link) => {
@@ -74,12 +76,14 @@ const scrappPageAndReturnAnswerParagraphs = async (pageInstance, link) => {
     !link.includes('/tagged'),
   );
 
-  console.log(linksWithoutTaggedPostPages);
-
   let linksAfterOptions = [...linksWithoutTaggedPostPages];
 
-  for (opt of Object.keys(optionsAndValues)) {
-    linksAfterOptions = options[opt](linksAfterOptions, optionsAndValues[opt]);
+  // for long options
+  let key;
+  let value;
+  for (opt of longOptions) {
+    [key, value] = opt.split('=');
+    linksAfterOptions = options.long[key](linksAfterOptions, value);
   }
 
   const pageArray = [];
@@ -93,10 +97,16 @@ const scrappPageAndReturnAnswerParagraphs = async (pageInstance, link) => {
     })
   ]);
 
-  // result.forEach(answer => {
-  //   answer.forEach(p => console.log(`${p}\n`));
-  //   console.log('='.repeat(50));
-  // });
+  // for short options
+  let resultsAfterOptions;
+  for (opt of shortOptions) {
+    resultsAfterOptions = options.short[opt](result);
+  }
+
+  resultsAfterOptions.forEach(answer => {
+    answer.forEach(p => console.log(`${p}\n`));
+    console.log('='.repeat(50));
+  });
 
   await browser.close();
 })();
