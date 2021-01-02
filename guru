@@ -1,0 +1,3 @@
+#!/bin/bash
+
+node <caminho-para-o-projeto>/src/index.js "$@"
