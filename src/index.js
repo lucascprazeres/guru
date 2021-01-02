@@ -10,13 +10,27 @@ const shortOptions = [];
 if (arguments.length > 3) {
   for (arg of arguments.splice(3,)) {
     if (arg.includes('--')) {
-      longOptions.push(arg);
+
+      let option = arg.split('=')[0];
+
+      if (Object.keys(options.long).includes(option)) {
+        longOptions.push(arg);
+      } 
+      else throw new Error(`argument ${arg} is invalid.`);
+    } 
+    else if (arg.includes('-')) {
+      if (Object.keys(options.short).includes(arg)) {
+        shortOptions.push(arg);
+      }
+      else throw new Error(`argument ${arg} is invalid.`)
     }
     else {
-      shortOptions.push(arg);
+      throw new Error(`argument ${arg} is invalid.`)
     }
   }
 }
+
+if (longOptions.length === 0) longOptions.push("--limit=1");
 
 const scrappPageAndReturnAnswerParagraphs = async (pageInstance, link) => {
   await pageInstance.goto(link);
@@ -98,7 +112,7 @@ const scrappPageAndReturnAnswerParagraphs = async (pageInstance, link) => {
   ]);
 
   // for short options
-  let resultsAfterOptions;
+  let resultsAfterOptions = [...result];
   for (opt of shortOptions) {
     resultsAfterOptions = options.short[opt](result);
   }
