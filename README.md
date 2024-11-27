@@ -3,115 +3,115 @@
 </div>
 
 <h1 align="center">Guru</h1>
-<h4 align="center" id="sobre">Uma aplicação de linha de comando que automatiza buscas no stackoverflow :mag:</h4>
+<h4 align="center" id="about">A command-line application that automates searches on Stack Overflow :mag:</h4>
 
 <div align="center">
 
 ![](https://img.shields.io/badge/license-MIT-green)
-![](https://img.shields.io/badge/languege-Portuguese-yellow)
+![](https://img.shields.io/badge/language-Portuguese-yellow)
 [![GitHub Repo stars](https://img.shields.io/github/stars/lucascprazeres/sof_guru?style=social)](https://github.com/lucascprazeres/sof_guru/stargazers)
 
 </div>
 
-<h2 align="center">  <img width="700" alt="Vídeo do Projeto" title="#Projeto" src=".github/video.gif" />  </h2>
+<h2 align="center">  <img width="700" alt="Project Video" title="#Project" src=".github/video.gif" />  </h2>
 
 ### Features 
-- [x] Buscar pelo termo passado como argumento de linha de comando
-- [x] Mostrar Rapidamente no console a solução mais votada
+- [x] Search by the term passed as a command-line argument
+- [x] Quickly show the most upvoted solution in the console
 
  
- <!-- Altere os Pré-requisitos -->
+ <!-- Update prerequisites -->
 
-### 🛒 Pré-requisitos<a id="pre-requisitos"></a>
+### 🛒 Prerequisites<a id="prerequisites"></a>
 
-Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
+Before you begin, you'll need to have the following tools installed on your machine:
 * [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/pt-br/)
+* [Node.js](https://nodejs.org/en/)
  
- Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
+ Additionally, it’s recommended to use an editor to work with the code, such as [VSCode](https://code.visualstudio.com/)
  
-### 📀Executando a Aplicação<a id="rodando"></a>
+### 📀 Running the Application<a id="running"></a>
    
-````bash 
- # Clone este repositório
+```bash 
+ # Clone this repository
  git clone https://github.com/lucascprazeres/sof_guru
  
- # Acesse a pasta do projeto no terminal
+ # Access the project folder in the terminal
  cd sof_guru
  
- # Instale as dependências
- $ yarn install ou
+ # Install the dependencies
+ $ yarn install or
  $ npm i 
  
- # Execute a aplicação
- $ node src/index.js "sua pesquisa" ou
- $ yarn/npm start "sua pesquisa"
- ````
+ # Run the application
+ $ node src/index.js "your search term" or
+ $ yarn/npm start "your search term"
+ ```
 
- Além da pesquisa padrão, você também pode passar as seguintes opções:
+ Besides the standard search, you can also pass the following options:
 
- - **--limit=valor**: indica o número de resultados que você deseja ver
- - **-u**: deixa o texto em caixa alta
- - **-l**: deixa o texto em caixa baixa
+ - **--limit=valor**: specifies the number of results you want to see
+ - **-u**: makes the text uppercase
+ - **-l**: makes the text lowercase
 
-#### Para usuários linux
-Para executar o programa como no vídeo mostrado, através do comando "guru", basta seguir o seguinte passo a passo:
+#### For Linux users
+To run the program as shown in the video with the "guru" command, follow these steps:
 
-Crie, em sua home, a pasta bin, que conterá os seus próprios comandos.
+Create a "bin" folder in your home directory to store your custom commands.
 
 ```bash
 mkdir ~/bin
 ```
 
-Atualize o arquivo "guru" com o caminho para a pasta do seu projeto e mova-o para lá. Em seguida, você precisa "dizer" ao seu interpretador de comandos para tratar o novo arquivo com executável.
+Update the "guru" file with the path to your project folder and move it there. Then, you need to "tell" your command interpreter to treat the new file as executable.
 
 ```bash
-# exemplo de dentro do projeto
+# example from within the project
 mv guru ~/bin
 chmod +x ~/bin/guru
 ```
 
-Finalmente, é preciso adicionar o caminho para a pasta recém criada ao seu PATH, para que o interpretador saiba onde procurar pelo código do comando.
+Finally, add the path to the newly created folder to your PATH, so that the interpreter knows where to look for the command code.
 
 ```bash
-echo "PATH="$PATH:$HOME/bin"" >> ~/.bashrc # ou .zshrc, se for o seu caso
+echo "PATH="$PATH:$HOME/bin"" >> ~/.bashrc # or .zshrc, if that's your case
 ```
 
-*não se esqueça que são dois símbolos de maior que ">>" no comando acima, ou isso pode te causar um problemão*
+*Remember to use two "greater than" symbols ">>" in the command above, or it might cause an issue.*
 
-Pronto! Agora é só reiniciar o seu terminal e o seu novo comando já estará disponível!
+That's it! Now, just restart your terminal and your new command will be available!
 
- <!-- Altere as Tecnologias -->
-### 🛠 Tecnologias<a id="tecnologias"></a>
- As seguintes ferramentas foram usadas na construção do projeto:
+<!-- Update Technologies -->
+### 🛠 Tecnologies<a id="tech"></a>
+The following tools were used in the development of the project:
  
   - [Puppeteer](https://pptr.dev/)
   - [Javascript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
 
-### 👨‍💻Autor <a id="autor"> </a>
+### 👨‍💻Author <a id="author"> </a>
 
-## Como contribuir?
+## How to contribute?
 
-Com o projeto na sua máquina, basta criar uma branch para a sua feature/correção
+With the project on your machine, just create a branch for your feature/fix
 
 ```bash
-$ git checkout -b sua_branch
+$ git checkout -b your_branch
 ```
 
-Realize as mudanças, e, depois disso, salve-as e envie para este repositório, com
+Make the changes, then save and push them to this repository with:
 
 
 ```bash
 $ git add .
-$ git commit -m 'conte o que você fez'
-$ git push origin sua-branch
+$ git commit -m 'describe what you did'
+$ git push origin your_branch
 ```
 
-Ao acessar esse repositório via github, a opção de criar um **pull request** estará disponível.
+When you access this repository on GitHub, the option to create a pull request will be available.
 
-## Licença
-Esse projeto se encontra sob a licença **MIT**. Para mais informações, acesse o arquivo **LICENSE**.
+## License
+This project is licensed under the **MIT** license. For more information, see the **LICENSE** file.
 
 ---
 
-<div align="center"> Feito com ❤️ por <a href="https://www.linkedin.com/in/lucas-prazeres/">Lucas Prazeres</a> 👋 Entre em contato! </div>  
+<div align="center"> Made with ❤️ by <a href="https://www.linkedin.com/in/lucas-prazeres/">Lucas Prazeres</a> 👋 Get in touch! </div>
